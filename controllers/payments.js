@@ -1,19 +1,5 @@
 const Payment = require('../models/Payment');
-
-const responseObj = (success, responseCode, results = {}, error = '') => {
-  const defaultResponse = {
-    success,
-    responseCode
-  }
-
-  if (error !== '') {
-    defaultResponse.error = error
-  } else {
-    defaultResponse.results = results
-  };
-
-  return defaultResponse;
-}
+const { responseObj } = require('../helpers/responseObject');
 
 // @route  GET /api/v1/payments
 exports.getPayments = async (req, res, next) => {
