@@ -1,10 +1,8 @@
-import React from 'react'
+import PaymentsContainer from '../containers/PaymentsContainer';
 
 const PaymentsPage = () => {
   return (
-    <div className="bg-pink-600 bg-opacity-50">
-      Payments Page
-    </div>
+    <PaymentsContainer />
   )
 }
 

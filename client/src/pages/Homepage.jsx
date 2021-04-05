@@ -2,7 +2,7 @@ import Button from '../components/Button'
 
 const Homepage = () => {
   return (
-    <div className="flex items-center flex-col" style={{ height: '95vh'}}>
+    <div className="flex items-center flex-col">
       <h1 className="text-3xl m-4">
         Jamie Blaut's expense tracker
       </h1>
