@@ -1,1 +1,28 @@
-# expense-tracker
+# Expense Tracker
+
+To run this application locally run `npm i && npm run dev` in the root directory.
+
+The app is available on port 3000, and the API runs on port 4000.
+
+## API
+
+To view payments:
+`GET /api/v1/payments`
+
+To add payment:
+`POST /api/v1/payments`
+with body containing description, amount, and person, e.g.
+```
+{
+    "description": "books",
+    "amount": 55,
+    "person": "Jamie"
+}
+```
+
+To delete payment:
+`DELETE /api/v1/payment/:id`
+
+To view history:
+`GET /api/v1/history`
+  
