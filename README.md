@@ -4,6 +4,8 @@ To run this application locally run `npm i && npm run dev` in the root directory
 
 The app is available on port 3000, and the API runs on port 4000.
 
+Running `npm run dev` runs both, to run them independently use `npm run client` and/or `npm run server`
+
 ## API
 
 To view payments:
