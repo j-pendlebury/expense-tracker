@@ -1,9 +1,15 @@
-import React from 'react'
+import Button from '../components/Button'
 
 const Homepage = () => {
   return (
-    <div className="bg-yellow-600 bg-opacity-50">
-      Homepage
+    <div className="flex items-center flex-col" style={{ height: '95vh'}}>
+      <h1 className="text-3xl m-4">
+        Jamie Blaut's expense tracker
+      </h1>
+      <div className="flex flex-row">
+        <Button text="Go to Payments" path="/payments" />
+        <Button text="Go to History" path="/history" />
+      </div> 
     </div>
   )
 }
