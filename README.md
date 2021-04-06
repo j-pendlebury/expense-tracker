@@ -27,4 +27,17 @@ To delete payment:
 
 To view history:
 `GET /api/v1/history`
-  
+
+## TO DO:
+
+Many things...
+
+- [ ] TESTS
+- [ ] Add Storybook for components?
+- [ ] Cache-ing
+- [ ] Add payments form
+- [ ] Select history by month
+- [ ] Select payments by month 
+- [ ] Nicer UI because ew
+- [ ] Logging
+- [ ] Remove some code duplication, e.g. in MainContext
