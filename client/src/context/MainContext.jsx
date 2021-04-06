@@ -14,7 +14,7 @@ export const MainProvider = ({ children }) => {
     try {
       const response = await fetch('/api/v1/payments', { method: 'GET' });
       const responseJson = await response.json();
-      console.log(responseJson.results)
+
       dispatch({
         type: 'ALL_PAYMENTS',
         payload: responseJson.results
@@ -28,7 +28,7 @@ export const MainProvider = ({ children }) => {
     try {
       const response = await fetch('/api/v1/history', { method: 'GET' });
       const responseJson = await response.json();
-      console.log(responseJson.results)
+
       dispatch({
         type: 'GET_HISTORY',
         payload: responseJson.results
@@ -38,11 +38,17 @@ export const MainProvider = ({ children }) => {
     }
   }
 
-  const deletePayment = id => {
-    dispatch({
-      type: 'DELETE_PAYMENT',
-      payload: id
-    })
+  const deletePayment = async id => {
+    try {
+      await fetch(`/api/v1/payments/${id}`, { method: 'DELETE' });
+
+      dispatch({
+        type: 'DELETE_PAYMENT',
+        payload: id
+      })
+    } catch (err) {
+      console.log("Something went wrong")
+    }
   }
 
   const addPayment = paymentObj => {
