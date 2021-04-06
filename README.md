@@ -41,3 +41,6 @@ Many things...
 - [ ] Nicer UI because ew
 - [ ] Logging
 - [ ] Remove some code duplication, e.g. in MainContext
+- [ ] Edit payments
+- [ ] Automatically show total for month and add to /history db
+- [ ] ... TBC
