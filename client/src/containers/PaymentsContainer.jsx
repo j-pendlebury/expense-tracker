@@ -1,25 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import ListOfPayments from '../components/ListOfPayments';
 import TotalPayments from '../components/TotalPayments';
+import { MainContext } from '../context/MainContext'
 
 const PaymentsContainer = () => {
-  const [payments, setPayments] = useState([]);
+  const { results, getPayments } = useContext(MainContext);
 
   useEffect(() => {
-    const fetchResults = async () => {
-      const response = await fetch('/api/v1/payments', { method: 'GET' });
-      const data = await response.json();
-  
-      setPayments(data.results);
-    }
-
-    fetchResults();
+    getPayments();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
-      <ListOfPayments data={payments} />
-      <TotalPayments data={payments} />
+      <ListOfPayments data={results} />
+      <TotalPayments data={results} />
     </>
   )
 }

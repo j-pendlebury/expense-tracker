@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { MainProvider } from './context/MainContext'
 import Homepage from './pages/Homepage';
 import HistoryPage from './pages/HistoryPage';
 import PaymentsPage from './pages/PaymentsPage';
@@ -6,7 +7,7 @@ import Navigation from './components/Navigation';
 
 const App = () => {
   return (
-    <>
+    <MainProvider>
       <Navigation />
       <Router>
         <Switch>
@@ -15,7 +16,7 @@ const App = () => {
           <Route path="/payments" exact component={PaymentsPage} />
         </Switch>
       </Router>
-    </>
+    </MainProvider>
   )
 }
 

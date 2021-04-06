@@ -22,7 +22,7 @@ const ListOfPayments = ({ data }) => {
         </thead>
         <tbody>
           {data.map(result => {
-            return <Payment data={result} options={options} />
+            return <Payment key={result._id} data={result} options={options} />
           })}
         </tbody>
       </table>
