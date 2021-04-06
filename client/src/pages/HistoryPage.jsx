@@ -1,9 +1,9 @@
-import React from 'react'
+import HistoryContainer from '../containers/HistoryContainer'
 
 const HistoryPage = () => {
   return (
-    <div className="bg-blue-600 bg-opacity-50">
-      HistoryPage
+    <div>
+      <HistoryContainer />
     </div>
   )
 }

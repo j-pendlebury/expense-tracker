@@ -24,6 +24,20 @@ export const MainProvider = ({ children }) => {
     }
   }
 
+  const getHistory = async () => {
+    try {
+      const response = await fetch('/api/v1/history', { method: 'GET' });
+      const responseJson = await response.json();
+      console.log(responseJson.results)
+      dispatch({
+        type: 'GET_HISTORY',
+        payload: responseJson.results
+      })
+    } catch (err) {
+      
+    }
+  }
+
   const deletePayment = id => {
     dispatch({
       type: 'DELETE_PAYMENT',
@@ -43,7 +57,8 @@ export const MainProvider = ({ children }) => {
       results: state.results,
       deletePayment,
       addPayment,
-      getPayments
+      getPayments,
+      getHistory
     }}>
       {children}
     </MainContext.Provider>

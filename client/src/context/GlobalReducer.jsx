@@ -1,5 +1,10 @@
 const reducer = (state, action) => {
   switch(action.type) {
+    case 'GET_HISTORY':
+      return {
+        ...state,
+        results: action.payload
+      }
     case 'ALL_PAYMENTS':
       return {
         ...state,
